@@ -16,7 +16,6 @@
 
         <selenium.version>4.49.0</selenium.version>
         <testng.version>7.12.0</testng.version>
-        <jackson.version>2.22.2</jackson.version>
         <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
         <maven.surefire.version>3.6.0</maven.surefire.version>
     </properties>
@@ -32,12 +31,6 @@
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
             <scope>test</scope>
-        </dependency>
-        
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
         </dependency>
     </dependencies>
 

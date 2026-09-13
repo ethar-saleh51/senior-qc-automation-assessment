@@ -3,7 +3,7 @@
 <suite name="Senior QC Automation Suite">
     <test name="UI Tests">
         <packages>
-            <package name="tests.ui.*"/>
+            <package name="com.seniorqcautomation.tests.ui"/>
         </packages>
     </test>
 </suite>
