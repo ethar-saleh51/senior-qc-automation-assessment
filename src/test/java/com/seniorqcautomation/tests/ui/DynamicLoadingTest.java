@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class DynamicLoadingTest extends BaseTest {
     @Test
-    public void shouldDisplayHelloWorldAfterLoading() throws InterruptedException {
+    public void shouldDisplayHelloWorldAfterLoading() {
         HomePage homePage = new HomePage(driver, config.getExplicitWaitTimeout());
         homePage.open(config.getBaseUrl());
         DynamicLoadingPage dynamicLoadingPage = homePage.clickDynamicLoading();
@@ -18,8 +18,5 @@ public class DynamicLoadingTest extends BaseTest {
 
         Assert.assertEquals(examplePage.getResultText(), "Hello World!",
                 "The dynamically loaded result should display the expected greeting.");
-
-        // TEMPORARY visual inspection only: loading and assertion have already completed.
-        Thread.sleep(10_000);
     }
 }
