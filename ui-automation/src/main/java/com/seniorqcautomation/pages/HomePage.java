@@ -13,8 +13,9 @@ public class HomePage extends BasePage {
         super(driver, waitTimeout);
     }
 
-    public void open(String baseUrl) {
+    public HomePage open(String baseUrl) {
         driver.get(baseUrl);
+        return this;
     }
 
     public FileUploadPage clickFileUpload() {

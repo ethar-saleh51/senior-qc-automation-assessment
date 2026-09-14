@@ -16,14 +16,16 @@ public class FileUploadPage extends BasePage {
         super(driver, waitTimeout);
     }
 
-    public void selectImage(Path imagePath) {
+    public FileUploadPage selectImage(Path imagePath) {
         wait.until(ExpectedConditions.presenceOfElementLocated(fileInput))
                 .sendKeys(imagePath.toAbsolutePath().normalize().toString());
+        return this;
     }
 
-    public void submitUpload() {
+    public FileUploadPage submitUpload() {
         wait.until(ExpectedConditions.elementToBeClickable(uploadButton)).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(uploadedFileName));
+        return this;
     }
 
     public String getResultHeading() {

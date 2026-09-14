@@ -11,12 +11,11 @@ public class FileUploadTest extends BaseTest {
     @Test
     public void shouldUploadImageSuccessfully() {
         Path imagePath = resolveTestResource("testdata/images/upload-sample.png");
-        HomePage homePage = new HomePage(driver, config.getExplicitWaitTimeout());
-
-        homePage.open(config.getBaseUrl());
-        FileUploadPage fileUploadPage = homePage.clickFileUpload();
-        fileUploadPage.selectImage(imagePath);
-        fileUploadPage.submitUpload();
+        FileUploadPage fileUploadPage = new HomePage(driver, config.getExplicitWaitTimeout())
+                .open(config.getBaseUrl())
+                .clickFileUpload()
+                .selectImage(imagePath)
+                .submitUpload();
 
         Assert.assertEquals(fileUploadPage.getResultHeading(), "File Uploaded!",
                 "The upload success heading should be displayed.");

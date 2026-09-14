@@ -13,8 +13,9 @@ public class DynamicLoadingExamplePage extends BasePage {
         super(driver, waitTimeout);
     }
 
-    public void clickStart() {
+    public DynamicLoadingExamplePage clickStart() {
         wait.until(ExpectedConditions.elementToBeClickable(startButton)).click();
+        return this;
     }
 
     public String getResultText() {
